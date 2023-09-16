@@ -75,7 +75,7 @@ export const AdminPanel = () => {
           /> */}
                 <TextField
                   id="outlined-number"
-                  type="text"
+                  type="password"
                   InputLabelProps={{
                     shrink: true,
                   }}
