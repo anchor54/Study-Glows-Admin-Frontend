@@ -1,0 +1,75 @@
+@use "../../../scss" as *;
+
+$textIconMargin: 1rem;
+$textIconMarginSm: 0.25rem;
+
+.mocktestcard {
+  background: #ffffff;
+  border: 1px solid #dddddd;
+  box-shadow: 4px 4px 20px 8px rgba(0, 0, 0, 0.08);
+  margin: 0.5rem 0;
+
+  .grid {
+    display: grid;
+    grid-template-columns: 4fr 1fr;
+    grid-gap: 1rem;
+    padding: 1rem;
+    align-items: center;
+
+    .mocktest {
+      .wrapper {
+        @include customFlex($justify-content: flex-start);
+        flex-wrap: wrap;
+        margin-bottom: 0.25rem;
+      }
+
+      .additional {
+        transform: translateX(-$textIconMargin);
+
+        @media all and (max-width: $screen-md) {
+          margin-top: 0.5rem;
+          transform: translateX(-$textIconMarginSm);
+        }
+      }
+    }
+    .rightButton {
+      justify-self: end;
+    }
+
+    @media all and (max-width: $screen-md) {
+      grid-template-columns: 1fr;
+    }
+  }
+  .language {
+    line-height: 1rem;
+    font-size: 3.75 * $rem-size;
+
+    .wrapper {
+      @include customFlex($justify-content: flex-start);
+      background-color: #dddddd;
+      padding: 0.25rem 0;
+      color: $fifth-color;
+    }
+    .free {
+      color: $tertiary-color;
+      background-color: $fifth-color;
+      padding: 0.25rem;
+      border-radius: 0.5rem;
+    }
+
+    @media all and (max-width: $screen-md) {
+      font-size: 3.5 * $rem-size;
+    }
+  }
+}
+
+.textIcon {
+  @include customFlex();
+  margin: 0 $textIconMargin;
+  text-transform: capitalize;
+
+  @media all and (max-width: $screen-md) {
+    line-height: 3.5 * $rem_size;
+    margin: 0 $textIconMarginSm;
+  }
+}

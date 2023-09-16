@@ -1,0 +1,148 @@
+@use "../../../scss" as *;
+
+.testSeriesCollection {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  grid-gap: 2rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+  }
+
+  .navbar {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        margin: 1rem 0;
+        padding: 1rem;
+        box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+        font-weight: $font-bold;
+        position: relative;
+        cursor: pointer;
+
+        &:before {
+          content: "";
+          position: absolute;
+          background-color: #0a033c;
+          height: 100%;
+          width: calc(3 * calc($rem-size/2));
+          left: 0;
+          top: 0;
+        }
+
+        &:hover {
+          background-color: $highlight-color;
+          color: $tertiary-color;
+        }
+      }
+      .active {
+        background-color: $highlight-color;
+        color: $tertiary-color;
+      }
+    }
+  }
+
+  .collectionWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    justify-items: center;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+
+    img {
+      cursor: pointer;
+    }
+
+    @media all and (max-width: $screen-md) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .load {
+      position: absolute;
+      bottom: -2rem;
+    }
+  }
+
+  ::-webkit-scrollbar {
+    width: 0.25rem;
+  }
+
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #0373ba;
+    border-radius: 0.75rem;
+    background-color: #0373ba;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    box-shadow: inset 0 0 5px #ffffff;
+    border-radius: 0.75rem;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #fffffff3;
+  }
+}
+
+.whyTestSeries {
+  padding: var(--section_padding);
+  margin: var(--section_margin);
+
+  h1 {
+    text-align: center;
+    margin: var(--section_margin);
+  }
+  .cardWrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1.5rem;
+    width: 70vw;
+    margin: 0 auto;
+
+    .card {
+      @include customFlex(column);
+      background-color: rgb(4, 116, 186, 0.05);
+      border-radius: 0.5rem;
+      padding: 1rem;
+      text-align: center;
+
+      p {
+        color: #1e1e1e;
+        opacity: 0.8;
+      }
+    }
+    .exam {
+      background-color: rgb(4, 116, 186, 0.05);
+    }
+    .test {
+      background-color: rgb(17, 106, 56, 0.05);
+    }
+    .performance {
+      background-color: rgb(196, 38, 47, 0.05);
+    }
+
+    @media all and (max-width: $screen-md) {
+      grid-template-columns: 1fr;
+      grid-gap: 0.125rem;
+      margin: 0;
+      width: 100%;
+      .card {
+        @include customFlex(row);
+        border-radius: 0;
+        text-align: left;
+
+        & > div:nth-child(2) {
+          margin-left: 1rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,43 @@
+@use "../../../scss" as *;
+
+.blogNavbar2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1.25rem 0 0.25rem 0;
+  align-items: center;
+
+  h3 {
+    display: inline-block;
+    padding: 0 0.5rem;
+    font-weight: $font-regular;
+    margin: 0.5rem;
+    font-size: 2.25rem;
+  }
+  .item-1 {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .item-1,
+  .item-2 {
+    padding: 0.25rem 0;
+  }
+  @media all and (max-width: $screen-sm) {
+    flex-direction: column;
+    align-items: flex-start;
+    .item-2 {
+      margin-left: 1rem;
+    }
+    .date-field {
+      width: 40vw;
+    }
+  }
+}
+.divider {
+  background-color: $highlight-color;
+  height: 1px;
+  width: 100%;
+  margin: 0.5rem 0;
+}

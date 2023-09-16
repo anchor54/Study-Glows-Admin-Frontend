@@ -1,0 +1,40 @@
+@use "../../../scss" as *;
+
+.mySubscription {
+  .content {
+    max-height: 80vh;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+
+    .card {
+      @include dashboardCard();
+
+      h3 {
+        margin: 0;
+        padding: 0;
+      }
+      p {
+        color: #000000;
+      }
+      button {
+        margin: 0 0.5rem;
+      }
+    }
+  }
+  margin-bottom: 1rem;
+}
+
+.notification {
+  @include dashboardSidebar();
+
+  h1 {
+    @include customH1();
+  }
+
+  .item {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+}

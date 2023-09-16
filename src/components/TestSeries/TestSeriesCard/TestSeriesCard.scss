@@ -1,0 +1,38 @@
+@use "../../../scss" as *;
+
+.testSeriesCard {
+  width: max-content;
+
+  background: #ffffff;
+  box-shadow: 2.5573px 2.5573px 13.6389px 1.70487px rgba(21, 108, 60, 0.12);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  color: #156c3c;
+  text-align: center;
+
+  .category {
+    font-size: calc(5 * $rem-size);
+    padding: 0.5rem;
+  }
+  .title {
+    font-size: calc(6 * $rem-size);
+    font-weight: $font-bold;
+    padding: 0.5rem;
+  }
+  .date {
+    font-size: calc(5 * $rem-size);
+    font-weight: $font-semibold;
+    padding: 0.5rem;
+  }
+  .tags {
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      li {
+        padding: 0.25rem;
+      }
+    }
+  }
+}

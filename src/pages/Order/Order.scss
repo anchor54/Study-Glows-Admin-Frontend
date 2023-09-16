@@ -1,0 +1,37 @@
+@use "../../scss" as *;
+
+$height: 70vh;
+
+.success {
+  margin: 0 auto;
+  position: relative;
+  padding: 1rem;
+  background-image: url("../../../public/images/order/success.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: center;
+  height: $height;
+
+  img {
+    width: 40% !important;
+    opacity: 0.9;
+  }
+
+  .content {
+    position: absolute;
+    top: 0.7 * $height;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+
+    p,
+    h2 {
+      letter-spacing: 0.02em;
+      line-height: 180%;
+      font-weight: $font-bold;
+    }
+    p {
+      color: #696984;
+    }
+  }
+}

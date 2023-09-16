@@ -1,0 +1,32 @@
+@use "../../../scss" as *;
+
+.bestSectionDetail {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1rem;
+    width: 90%;
+    margin: 2rem auto;
+
+    .viewAll {
+      grid-column: 1/-1;
+      justify-self: end;
+
+      button {
+        opacity: 0.7;
+      }
+    }
+  }
+  .bestFaulty {
+    margin: var(--section_margin);
+    padding: var(--section_padding);
+    color: #0a033c !important;
+    h2 {
+      text-align: center;
+    }
+    .content {
+      margin: var(--section_margin);
+      padding: var(--section_padding);
+    }
+  }
+}

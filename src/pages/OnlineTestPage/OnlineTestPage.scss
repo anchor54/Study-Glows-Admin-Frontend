@@ -1,0 +1,48 @@
+@use "../../scss" as *;
+
+.onlineTest {
+  font-family: $font-family-1;
+  background-color: #fcfcfc;
+
+  button {
+    text-transform: none;
+  }
+}
+
+.testGrid {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 1rem;
+  width: 95vw;
+  margin: 0 auto;
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.answered {
+  background-color: $fifth-color;
+  padding: 0.5rem 0.75rem;
+  color: $tertiary-color;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+}
+.notanswered {
+  background-color: $secondary-color;
+  padding: 0.5rem 0.75rem;
+  color: $tertiary-color;
+  border-bottom-left-radius: 50%;
+  border-bottom-right-radius: 50%;
+}
+.notvisited {
+  background-color: $highlight-color;
+  padding: 0.5rem 0.75rem;
+  color: $tertiary-color;
+}
+.marked {
+  background-color: $primary-color;
+  padding: 0.5rem 0.75rem;
+  color: $tertiary-color;
+  border-radius: 50%;
+}

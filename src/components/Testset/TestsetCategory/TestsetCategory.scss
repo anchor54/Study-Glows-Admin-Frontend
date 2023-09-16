@@ -1,0 +1,29 @@
+@use "../../../scss" as *;
+
+.category_filter {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 1rem 0;
+    white-space: nowrap;
+    overflow: auto;
+    color: #666666;
+    letter-spacing: 0.696956px;
+
+    li {
+      display: inline-block;
+      padding: 0.25rem 1rem;
+      text-transform: capitalize;
+      cursor: pointer;
+    }
+
+    .active {
+      background-color: $fifth-color;
+      color: $tertiary-color;
+      border-radius: 0.5rem;
+    }
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}

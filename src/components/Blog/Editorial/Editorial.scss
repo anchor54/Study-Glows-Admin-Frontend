@@ -1,0 +1,69 @@
+@use "../../../scss" as *;
+
+.editorialCollections {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1.25rem;
+  margin: 1rem;
+  padding: 0.5rem;
+  position: relative;
+
+  .loadButton {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -3rem;
+  }
+
+  @media all and (max-width: $screen-md) {
+    & {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+.editorialCard {
+  display: grid;
+  box-shadow: 4px 4px 12px rgb(1 1 1 / 10%);
+  border-radius: 0.5rem;
+  background: $tertiary-color;
+  cursor: pointer;
+
+  .content {
+    padding: 1rem;
+
+    .wrapper1 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      img {
+        width: 3rem;
+      }
+    }
+
+    .wrapper2 {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 0.5rem;
+
+      div:nth-child(1),
+      div:nth-child(2) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        color: #696984;
+      }
+      div:nth-child(2) {
+        color: #53545b;
+      }
+    }
+  }
+}
+
+.editorialSideCollectionsList {
+  padding: 0.5rem;
+}

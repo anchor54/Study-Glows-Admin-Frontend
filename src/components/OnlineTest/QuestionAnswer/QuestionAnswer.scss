@@ -1,0 +1,75 @@
+@use "../../../scss" as *;
+
+.questionAnswer {
+  button {
+    background-color: #253858;
+    font-weight: $font-medium;
+    color: #ffffff;
+  }
+  .toolsButton {
+    @include customFlex();
+    .questions {
+      padding: 0.5rem 0;
+
+      button {
+        margin-right: 1rem;
+        margin-top: 1rem;
+      }
+    }
+  }
+  .questionOption {
+    .options {
+      ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+          padding: 1rem;
+        }
+      }
+    }
+    .next {
+      text-align: right;
+    }
+  }
+}
+
+.submitDialog {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  .closeIcon {
+    position: absolute;
+    right: -3%;
+    top: -3%;
+    cursor: pointer;
+
+    img {
+      width: 2rem;
+    }
+  }
+
+  .content {
+    padding: 1rem;
+    background: #fcfcfc;
+    border-radius: 1rem;
+
+    .wrapper {
+      @include customFlex($flex-direction: column);
+      text-align: center;
+
+      div {
+        padding: 0.5rem;
+      }
+
+      h1 {
+        margin: 0.5rem;
+        color: #0a033c;
+      }
+    }
+  }
+}

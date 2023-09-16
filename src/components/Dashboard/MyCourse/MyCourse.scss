@@ -1,0 +1,104 @@
+@use "../../../scss" as *;
+
+.myCourseContainer {
+  .myCourseHeaderWrapper {
+    @include customFlex();
+  }
+  .content {
+    background-color: $tertiary-color;
+    margin: 1rem 3rem 1rem 1rem;
+    border-radius: 0.75rem;
+    position: relative;
+
+    @include swiperSlider();
+
+    .courseCollection {
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 0.5rem;
+
+      .courseCard {
+        box-shadow: 3.87862px 3.87862px 11.6359px rgba(1, 1, 1, 0.1);
+      }
+    }
+
+    .rightArrow {
+      position: absolute;
+      right: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #000000;
+      background-color: #ffffff;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 4px 4px 12px rgba(1, 1, 1, 0.1);
+    }
+  }
+  .noData {
+    @include customFlex($flex-direction: column);
+  }
+}
+
+.courseContainer {
+  margin-top: 3rem;
+
+  .content {
+    margin: 1rem 3rem 1rem 1rem;
+    position: relative;
+
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 0.5rem;
+
+    @include swiperSlider();
+
+    .courseCard {
+      box-shadow: 3.87862px 3.87862px 11.6359px rgba(1, 1, 1, 0.1);
+    }
+
+    .addMore {
+      position: absolute;
+      right: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #000000;
+      background-color: #ffffff;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 4px 4px 12px rgba(1, 1, 1, 0.1);
+    }
+  }
+}
+
+.courseLearningTimeContainer {
+  margin-top: 3rem;
+
+  .content {
+    margin: 1rem 3rem 1rem 1rem;
+    position: relative;
+
+    .gridContainer {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      justify-items: start;
+
+      .alarm {
+        justify-self: end;
+      }
+    }
+
+    .header {
+      font-weight: $font-bold;
+    }
+    .row {
+      line-height: 1.25rem;
+      padding: 1rem;
+      align-self: center;
+      margin: 1rem 0;
+      background-color: #ffffff;
+      border-radius: 0.5rem;
+    }
+  }
+}

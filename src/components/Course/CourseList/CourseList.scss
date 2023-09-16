@@ -1,0 +1,77 @@
+@use "../../../scss" as *;
+
+.courseNavbar {
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin: 1rem 0;
+      padding: 1rem;
+      box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.05);
+      position: relative;
+      cursor: pointer;
+
+      &:before {
+        content: "";
+        position: absolute;
+        background-color: #0a033c;
+        height: 100%;
+        width: calc(3 * calc($rem-size/2));
+        left: 0;
+        top: 0;
+      }
+    }
+  }
+  .academic {
+    .active {
+      background-color: $secondary-color;
+      color: $tertiary-color;
+    }
+    li {
+      &:hover {
+        background-color: $secondary-color;
+        color: $tertiary-color;
+      }
+    }
+  }
+  .nonAcademic {
+    .active {
+      background-color: $primary-color;
+      color: $tertiary-color;
+    }
+    li {
+      &:hover {
+        background-color: $primary-color;
+        color: $tertiary-color;
+      }
+    }
+  }
+}
+
+.courseCollection {
+  padding-left: 0.5rem;
+  h3 {
+    margin: var(--section_margin);
+  }
+
+  .courseGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: var(--grid_gap);
+
+    @media all and (max-width: $screen-md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .loadMore {
+    text-align: right;
+    margin: var(--section_margin);
+
+    @media all and (max-width: $screen-md) {
+      text-align: center;
+    }
+  }
+}

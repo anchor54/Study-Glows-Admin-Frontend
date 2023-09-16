@@ -1,0 +1,36 @@
+@use "../../../scss" as *;
+
+.questionNavigation {
+  background: #ffffff;
+  box-shadow: 3px 3px 13.9768px rgba(0, 0, 0, 0.15);
+  padding: 1rem;
+
+  .questionSummary {
+    .wrapper {
+      @include customFlex($justify-content: flex-start);
+      font-size: 4 * $rem-size;
+      color: #0a033c;
+      margin: 1rem 0;
+
+      div:nth-child(1) {
+        margin-right: 1rem;
+      }
+    }
+  }
+
+  .sectionQuestionList {
+    font-weight: $font-regular;
+    font-size: 5 * $rem-size;
+
+    .questionsNumber {
+      display: flex;
+      flex-wrap: wrap;
+
+      div {
+        font-size: 1rem;
+        margin: 0.5rem;
+        cursor: pointer;
+      }
+    }
+  }
+}

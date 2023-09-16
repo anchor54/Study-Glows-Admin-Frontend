@@ -1,0 +1,21 @@
+@use "../../scss" as *;
+
+.divider-primary {
+  background-color: $primary-color !important;
+}
+.divider-secondary {
+  background-color: $secondary-color !important;
+}
+.divider-tertiary {
+  background-color: $fifth-color !important;
+}
+.divider-warning {
+  background-color: $highlight-color !important;
+}
+
+.divider {
+  background-color: $highlight-color;
+  height: 1px;
+  width: 100%;
+  margin: var(--divider_margin);
+}

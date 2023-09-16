@@ -1,0 +1,10 @@
+@use "../../../scss" as *;
+
+.popularTestSeries {
+  h1 {
+    margin: var(--section_margin);
+  }
+  .testSeriesCardWrapper {
+    @include swiperSlider();
+  }
+}

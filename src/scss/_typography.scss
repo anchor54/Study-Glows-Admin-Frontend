@@ -1,0 +1,115 @@
+@mixin baseTypography {
+  font-family: "Lato";
+  font-style: normal;
+  font-weight: 400;
+  color: inherit;
+}
+
+.display_large {
+  @include baseTypography();
+  // font-size: 3.5625rem;
+  font-size: 3rem;
+  line-height: 4rem;
+  letter-spacing: -0.25px;
+}
+
+.display_medium {
+  @include baseTypography();
+  // font-size: 2.8125rem;
+  // line-height: 3.25rem;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
+  letter-spacing: 0px;
+}
+
+.display_small {
+  @include baseTypography();
+  // font-size: 2.25rem;
+  font-size: 2rem;
+  line-height: 2.75rem;
+  letter-spacing: 0px;
+}
+
+.headline_large {
+  @include baseTypography();
+  // font-size: 2rem;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  letter-spacing: 0px;
+}
+
+.headline_medium {
+  @include baseTypography();
+  font-size: 1.75rem;
+  line-height: 2.25rem;
+  letter-spacing: 0px;
+}
+
+.headline_small {
+  @include baseTypography();
+  font-size: 1.5rem;
+  line-height: 2rem;
+  letter-spacing: 0px;
+}
+
+.title_large {
+  @include baseTypography();
+  font-size: 1.375rem;
+  line-height: 1.75rem;
+  letter-spacing: 0px;
+}
+
+.title_medium {
+  @include baseTypography();
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.15px;
+}
+
+.title_small {
+  @include baseTypography();
+  font-size: 0.875rem;
+  line-height: 0.625rem;
+  letter-spacing: 0.1px;
+}
+
+.label_large {
+  @include baseTypography();
+  font-size: 0.875rem;
+  line-height: 0.625rem;
+  letter-spacing: 0.1px;
+}
+
+.label_medium {
+  @include baseTypography();
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.5px;
+}
+
+.label_small {
+  @include baseTypography();
+  font-size: 0.6875rem;
+  line-height: 1rem;
+  letter-spacing: 0.5px;
+}
+.body_large {
+  @include baseTypography();
+  font-size: 1rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.15px;
+}
+
+.body_medium {
+  @include baseTypography();
+  font-size: 0.875rem;
+  line-height: 0.625rem;
+  letter-spacing: 0.25px;
+}
+
+.body_small {
+  @include baseTypography();
+  font-size: 0.75rem;
+  line-height: 1rem;
+  letter-spacing: 0.4px;
+}

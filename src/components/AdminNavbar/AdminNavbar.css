@@ -1,0 +1,22 @@
+.nav ul {
+  list-style: none;
+}
+.nav{
+  color: white;
+  font-family: "Lato";
+  /* border: 2px solid yellow; */
+  background: #0373BA;
+  min-height: 50px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.sec-2 ul{
+  display: flex;
+  justify-content: space-between;
+}
+.sec-1 ul{
+  display: flex;
+  justify-content: space-between;
+}

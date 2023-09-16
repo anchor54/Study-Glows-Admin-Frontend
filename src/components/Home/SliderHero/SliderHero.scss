@@ -1,0 +1,99 @@
+@use "../../../scss" as *;
+
+.slider {
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    align-items: center;
+    position: relative;
+
+    .desctiption {
+      @include customFlex(column, flex-start, flex-start);
+      color: inherit;
+
+      .logo {
+        margin-left: -2%;
+      }
+
+      p {
+        padding: var(--p_padding);
+      }
+    }
+
+    .right {
+      justify-self: center;
+      align-self: center;
+
+      .outer {
+        position: relative;
+        .idea {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .back {
+          position: absolute;
+          top: 50%;
+          right: 12%;
+          width: 10%;
+          transform: translateY(-50%);
+          cursor: pointer;
+          border-radius: 50%;
+          background: #ffffff;
+          box-shadow: 0px 30.1983px 60.3967px -14.4952px rgba(119, 119, 119, 0.3);
+          z-index: 2;
+          img {
+            transform: rotate(-180deg);
+          }
+        }
+
+        .front {
+          position: absolute;
+          top: 50%;
+          right: 0;
+          width: 10%;
+          transform: translateY(-50%);
+          cursor: pointer;
+          border-radius: 50%;
+          background: #ffffff;
+          box-shadow: 0px 30.1983px 60.3967px -14.4952px rgba(119, 119, 119, 0.3);
+          z-index: 2;
+        }
+      }
+    }
+  }
+}
+
+.arrowsWrapper {
+  position: relative;
+
+  .idea_1 {
+    margin: 3rem 0 0 0;
+    padding: 5rem 10rem;
+    visibility: hidden;
+  }
+
+  .curveArrow {
+    position: absolute;
+  }
+
+  .topLeft {
+    top: 0;
+    left: 0;
+  }
+  .topRight {
+    top: 0;
+    right: 0;
+  }
+  .bottomRight {
+    bottom: 0;
+    right: 0;
+  }
+  .bottomLeft {
+    bottom: 0;
+    left: 0;
+  }
+}

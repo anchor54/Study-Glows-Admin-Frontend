@@ -1,0 +1,25 @@
+@use "../../../scss" as *;
+
+.currentAffairContainer {
+  margin-bottom: 1rem;
+  .CA_Content {
+    max-height: 50vh;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+  }
+}
+
+.editorialContainer {
+  .E_content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0.5rem;
+    max-height: 40vh;
+    overflow-y: auto;
+    padding: 0.5rem 0;
+
+    @media all and (max-width: $screen-md) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

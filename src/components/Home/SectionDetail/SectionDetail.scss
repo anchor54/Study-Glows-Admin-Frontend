@@ -1,0 +1,36 @@
+@use "../../../scss" as *;
+
+.sectionDetail {
+  margin-top: 3rem;
+
+  .prepare {
+    color: #544f77 !important;
+    font-size: 1.125rem;
+
+    .link {
+      margin: 0 5px;
+      font-size: 1.125rem;
+      text-decoration: none;
+      font-weight: $font-bold;
+      color: $primary-color;
+    }
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    place-items: center;
+
+    .detail {
+      .wrapper {
+        color: inherit;
+        @include customFlex(column, flex-start, flex-start);
+
+        .logo {
+          margin-left: -1rem;
+        }
+      }
+    }
+  }
+}

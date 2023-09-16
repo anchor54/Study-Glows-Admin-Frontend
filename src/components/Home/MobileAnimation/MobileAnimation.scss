@@ -1,0 +1,42 @@
+@use "../../../scss" as *;
+
+.mobileAnimation {
+  margin: var(--section_margin) !important;
+  padding: var(--section_padding) !important;
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    place-items: center;
+
+    .circle_mobile {
+      position: relative;
+      .mobile {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+
+    .socialMedia {
+      ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        .wrapper {
+          @include customFlex();
+          font-weight: $font-black;
+          font-size: 2rem;
+        }
+        li {
+          div {
+            padding: 0 0.5rem;
+            margin: 1rem 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}

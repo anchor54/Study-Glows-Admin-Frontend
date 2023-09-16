@@ -1,0 +1,22 @@
+@use "../../../scss" as *;
+
+.courseTitle {
+  display: grid;
+  grid-template-columns: 1rem 3fr 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  background-color: #0a033c;
+  color: $tertiary-color;
+  padding: 1.5rem !important;
+  position: sticky;
+  z-index: 2;
+  top: 0;
+
+  .title {
+    font-weight: $font-black;
+  }
+  button {
+    color: inherit;
+    margin-left: -0.5rem;
+  }
+}

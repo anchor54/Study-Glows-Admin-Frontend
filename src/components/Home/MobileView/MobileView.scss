@@ -1,0 +1,88 @@
+@use "../../../scss" as *;
+
+.hero {
+  @include customFlex($flex-direction: column);
+  margin: 1rem 0;
+
+  p {
+    font-weight: $font-bold;
+    line-height: 19px;
+    letter-spacing: 0.582248px;
+    color: #000000 !important;
+    padding: 0;
+    margin: 0.5rem;
+  }
+
+  .choose-course {
+    width: 50%;
+  }
+  div[role="button"] {
+    padding: 0.5rem;
+  }
+
+  fieldset {
+    border: none;
+  }
+}
+
+.divider {
+  margin: 1rem 0;
+}
+
+.androidApp {
+  width: 60%;
+  margin: 1rem auto;
+}
+
+.mobileSection {
+  @include customFlex($flex-direction: column);
+  margin: var(--section_margin);
+
+  .wrapper {
+    text-align: center;
+    color: inherit;
+
+    p {
+      font-size: 1.5rem;
+      line-height: 28px;
+      letter-spacing: 0.582248px;
+      color: inherit;
+    }
+  }
+  .wrapper2 {
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 1rem;
+  }
+  .viewAll {
+    padding: 1rem;
+
+    button {
+      background: #e6f5ff;
+      color: #000000;
+      svg {
+        color: $primary-color;
+      }
+    }
+  }
+
+  .editorialCard {
+    .content {
+      padding: 0.25rem;
+      .wrapper1 {
+        div:nth-child(2) {
+          display: none;
+        }
+      }
+      .wrapper2{
+        div:nth-child(1), div:nth-child(2){
+          margin: 0 0.125rem 0 0;
+        }
+        svg{
+          width: 1rem;
+        }
+      }
+    }
+  }
+}

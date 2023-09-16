@@ -1,0 +1,27 @@
+@use "../../../scss" as *;
+
+.courseCard {
+  display: grid;
+  grid-template-columns: 1fr;
+  max-width: 15rem;
+
+  .thumbnail {
+    img {
+      aspect-ratio: 4/3;
+    }
+  }
+  .title {
+    p {
+      padding: 0.25rem;
+      color: var(--h_clr_500);
+    }
+  }
+  .link {
+    button {
+      width: 100%;
+      font-weight: $font-bold;
+      text-transform: capitalize;
+    }
+  }
+  box-shadow: 0px 16px 32px rgba(232, 241, 247, 0.4);
+}

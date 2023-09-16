@@ -1,0 +1,61 @@
+@use "../../../scss" as *;
+
+.coursesection {
+  ul {
+    list-style: none;
+  }
+
+  .coursesectionWrapper {
+    @include customFlex();
+    color: #0a033c;
+    padding: 0.25rem 0.5rem;
+    border: 1px solid #ebebeb;
+  }
+
+  .coursesectionDropdown {
+    li {
+      .coursesection-item-wrapper {
+        @include customFlex();
+        padding: 0.5rem;
+        color: #0a033c;
+        border: 1px solid #ebebeb;
+        cursor: pointer;
+
+        .wrapper-2 {
+          @include customFlex(column, flex-end, flex-end);
+        }
+
+        .duration {
+          color: #696984;
+          padding: 0.25rem 0;
+        }
+      }
+      .odd {
+        background-color: #e8f1f7;
+      }
+      .even {
+        background-color: #ffffff;
+      }
+    }
+  }
+  .hide {
+    opacity: 0;
+    visibility: hidden;
+    height: 0;
+  }
+  .show {
+    opacity: 1;
+    visibility: visible;
+    height: auto;
+  }
+  .open {
+    transform: rotate(0deg);
+  }
+  .close {
+    transform: rotate(180deg);
+  }
+  .arrow,
+  .subsection {
+    transition: all 0.15s ease-in !important;
+  }
+}

@@ -1,0 +1,53 @@
+@use "../../../scss" as *;
+
+.doubtDialog {
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  .closeIcon {
+    position: absolute;
+    right: -3%;
+    top: -3%;
+    cursor: pointer;
+
+    img {
+      width: 2rem;
+    }
+  }
+
+  .content {
+    padding: 1rem;
+    background: #fcfcfc;
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      grid-gap: 1rem;
+      align-items: center;
+
+      h1 {
+        margin: 0.5rem;
+        font-weight: $font-black;
+      }
+      .right {
+        padding: 1rem;
+
+        .doubtButtons {
+          @include customFlex($justify-content: flex-end);
+          margin: 1rem 0 0 0;
+        }
+      }
+
+      @media all and (max-width: $screen-md) {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    fieldset {
+      border: none;
+    }
+  }
+}

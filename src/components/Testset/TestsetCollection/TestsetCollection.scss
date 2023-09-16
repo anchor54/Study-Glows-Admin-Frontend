@@ -1,0 +1,6 @@
+@use "../../../scss" as *;
+
+.testsetCollection {
+  display: grid;
+  grid-template-columns: 1fr;
+}

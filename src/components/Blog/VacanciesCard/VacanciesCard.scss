@@ -1,0 +1,48 @@
+@use "../../../scss" as *;
+
+.vacancies {
+  .card {
+    padding: 0;
+    margin: 0;
+    box-shadow: 4px 4px 12px rgb(1 1 1 / 10%);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    color: $primary-color;
+
+    ul {
+      list-style: none;
+      li {
+        padding: 0.5rem;
+        a {
+          text-decoration: none;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.similarVacancies {
+  padding: 0.5rem;
+
+  .card {
+    padding: 0;
+    margin: 0;
+    box-shadow: 4px 4px 12px rgb(1 1 1 / 10%);
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.5rem;
+    color: $primary-color;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      li {
+        padding: 0.5rem;
+        a {
+          text-decoration: none;
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}

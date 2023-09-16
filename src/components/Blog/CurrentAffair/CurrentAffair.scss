@@ -1,0 +1,104 @@
+@use "../../../scss" as *;
+
+.currentAffairCollections {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: 1rem;
+}
+.currentaffairCard {
+  position: relative;
+  padding: 1rem;
+  display: grid;
+  cursor: pointer;
+  grid-gap: 1rem;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  justify-items: start;
+  background-color: $tertiary-color;
+  box-shadow: 2.87874px 2.87874px 13.4119px rgba(0, 0, 0, 0.15);
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+    .image {
+      display: none;
+    }
+  }
+
+  .image {
+    position: relative;
+
+    .caption {
+      position: absolute;
+      bottom: 3%;
+      padding: 0.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $primary-color;
+      color: $tertiary-color;
+      width: 90%;
+      border-radius: 2px;
+      text-align: center;
+      font-weight: $font-bold;
+      line-height: 0.75rem;
+      font-size: $font-sm;
+    }
+  }
+  .content {
+    padding: 0.25rem 1rem;
+
+    h1 {
+      margin: 1px 0 0.25rem 0;
+      color: var(--h_clr_500);
+    }
+    p {
+      margin: 0.25rem 0 0.5rem 0;
+      color: var(--h_clr_500);
+
+      a {
+        text-decoration: none;
+        color: $primary-color;
+      }
+    }
+    .tags {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+
+      div:nth-child(1) {
+        padding: 0 0.25rem 0 0;
+        font-weight: $font-bold;
+      }
+
+      div:nth-child(2) {
+        padding: 0 0.25rem 0 0;
+        color: $primary-color;
+        position: relative;
+
+        .dot:first-child {
+          display: none;
+        }
+        .dot {
+          display: inline-block;
+          background-color: $primary-color;
+          height: 0.5rem;
+          width: 0.5rem;
+          border-radius: 50%;
+        }
+        span {
+          padding: 0 0.25rem;
+        }
+      }
+    }
+  }
+
+  .save {
+    position: absolute;
+    right: 0;
+    top: -6%;
+    padding: 0.25rem;
+
+    img {
+      width: 3rem;
+    }
+  }
+}

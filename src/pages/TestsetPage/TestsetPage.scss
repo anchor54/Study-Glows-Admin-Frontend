@@ -1,0 +1,14 @@
+@use "../../scss" as *;
+
+.testsetDashboard {
+  width: 70vw;
+  margin: 1rem auto;
+
+  @media all and (max-width: $screen-md) {
+    width: inherit;
+  }
+
+  h1 {
+    margin: var(--section_margin);
+  }
+}

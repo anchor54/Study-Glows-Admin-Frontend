@@ -1,0 +1,32 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --p_padding: 0.5rem 0;
+  --p_clr_400: #696984;
+  --p_clr_500: #544f77;
+  --h_clr_500: #0a033c;
+  --divider_margin: 1rem 0;
+  --section_padding: 1rem 0;
+  --section_margin: 1rem 0;
+  --grid_gap: 1rem;
+  --font-family: "Lato", sans-serif;
+}
+
+/* common classes */
+button {
+  text-transform: none;
+}
+.fluid-image {
+  width: 100%;
+  height: auto;
+}
+.buttonLink {
+  text-decoration: none;
+  color: inherit;
+}

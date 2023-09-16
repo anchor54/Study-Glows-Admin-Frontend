@@ -1,0 +1,101 @@
+@use "../../../scss" as *;
+
+.testseriesContainer {
+  .content {
+    margin: 1rem 3rem 1rem 1rem;
+    position: relative;
+    .card {
+      @include dashboardCard();
+      margin: 0.5rem 0;
+      div:nth-child(1) {
+        @include customFlex(row, flex-start, center);
+        padding: 0.25rem;
+        div:nth-child(1),
+        div:nth-child(2) {
+          padding: 0 0.25rem;
+        }
+      }
+      div:nth-child(2) {
+        @include customFlex(row, flex-start, center);
+        padding: 0.25rem;
+        button {
+          margin: 0 0.5rem;
+        }
+      }
+      @media all and (max-width: $screen-md) {
+        flex-direction: column;
+      }
+    }
+    .addMore {
+      position: absolute;
+      right: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #000000;
+      background-color: #ffffff;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 4px 4px 12px rgba(1, 1, 1, 0.1);
+    }
+  }
+}
+
+.testseriesEvaluationContainer {
+  .content {
+    margin: 1rem 3rem 1rem 1rem;
+    position: relative;
+    .card {
+      @include dashboardCard();
+      div:nth-child(1) {
+        @include customFlex(row, flex-start, center);
+
+        div:nth-child(1),
+        div:nth-child(2) {
+          padding: 0 0.25rem;
+        }
+      }
+      div:nth-child(2) {
+        @include customFlex(row, flex-start, center);
+
+        button {
+          margin: 0 0.5rem;
+        }
+      }
+    }
+  }
+}
+
+.myTestSeriesContainer {
+  .myTestSeriesHeaderWrapper {
+    @include customFlex();
+  }
+  .content {
+    background-color: $tertiary-color;
+    margin: 1rem 3rem 1rem 1rem;
+    border-radius: 0.75rem;
+    position: relative;
+
+    @include swiperSlider();
+    .swiper-wrapper {
+      padding: 0.5rem;
+      align-items: center;
+    }
+
+    .rightArrow {
+      position: absolute;
+      right: -3rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #000000;
+      background-color: #ffffff;
+      padding: 0.5rem;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 4px 4px 12px rgba(1, 1, 1, 0.1);
+    }
+  }
+  .noData {
+    @include customFlex($flex-direction: column);
+  }
+}

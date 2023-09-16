@@ -1,0 +1,102 @@
+@use "../../../scss" as *;
+
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: min-content 1fr;
+  grid-gap: var(--grid_gap);
+
+  .profileMenu {
+    color: #0053c2;
+    .profileDp {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding: 0.75rem 0.5rem;
+
+      div:nth-child(1),
+      div:nth-child(2) {
+        padding: 0 0.5rem;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+
+      .active li {
+        background-color: #e5f0ff;
+      }
+
+      li {
+        padding: 0.75rem 0.5rem;
+        border-radius: 0.5rem;
+        margin-top: 0.25rem;
+        .menu {
+          display: flex;
+          flex-direction: row;
+          justify-content: flex-start;
+          align-items: center;
+          font-weight: $font-semibold;
+
+          div:nth-child(1),
+          div:nth-child(2) {
+            padding: 0 0.5rem;
+          }
+        }
+
+        &:hover {
+          background-color: #e5f0ff;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+    margin-top: -0.6rem;
+
+    .profileMenu {
+      background-color: $primary-color;
+      color: $tertiary-color;
+
+      .profileDp {
+        div:nth-child(1) {
+          display: none;
+        }
+      }
+      .menus {
+        width: 100vw;
+        white-space: nowrap;
+        overflow: auto;
+
+        &::-webkit-scrollbar {
+          height: 0;
+          width: 0;
+        }
+
+        ul {
+          .active li {
+            background-color: inherit;
+            border-bottom: 0.25rem solid $tertiary-color;
+          }
+          li {
+            display: inline-block;
+            border-radius: 0;
+            padding: 0.75rem 0.5rem;
+            .menu {
+              img {
+                display: none;
+              }
+            }
+            &:hover {
+              background-color: inherit;
+              border-bottom: 0.25rem solid $tertiary-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}

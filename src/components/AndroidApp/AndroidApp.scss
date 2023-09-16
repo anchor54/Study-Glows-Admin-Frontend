@@ -1,0 +1,8 @@
+@use "../../scss" as *;
+
+.androidApp2 {
+  margin: var(--section_margin);
+  padding: var(--section_padding);
+  display: flex;
+  place-content: center;
+}

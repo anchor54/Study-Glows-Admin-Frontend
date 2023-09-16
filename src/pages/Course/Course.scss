@@ -1,0 +1,13 @@
+@use "../../scss" as *;
+
+.courseWrapper {
+  display: grid;
+  grid-template-columns: 1fr 4fr;
+  grid-gap: 1rem;
+  margin: 1rem 0;
+  padding: 1rem 0;
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+  }
+}

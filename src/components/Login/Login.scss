@@ -1,0 +1,80 @@
+@use "../../scss" as *;
+
+.loginDialog {
+  font-family: $font-family-1;
+  position: relative;
+
+  img {
+    width: 100%;
+  }
+
+  .closeIcon {
+    position: absolute;
+    right: -3%;
+    top: -3%;
+    cursor: pointer;
+
+    img {
+      width: 2rem;
+    }
+  }
+
+  .content {
+    padding: 1rem;
+    background: #fcfcfc;
+
+    .wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      grid-gap: 1rem;
+      align-items: center;
+
+      @media all and (max-width: $screen-md) {
+        grid-template-columns: 1fr;
+      }
+
+      p {
+        color: #0a033c;
+      }
+      .loginPhone {
+        color: #3c4852;
+        width: 100%;
+
+        &:focus,
+        &:active,
+        &:hover {
+          box-shadow: none !important;
+          border-color: #c9c9c9;
+        }
+      }
+      input:focus ~ fieldset,
+      input:active ~ fieldset,
+      input:hover ~ fieldset {
+        border-width: 1px;
+        border-color: #c9c9c9;
+        box-shadow: none !important;
+      }
+      input:disabled {
+        background-color: #e8f1f7;
+        border: none;
+      }
+      .right {
+        margin: 1rem 0 0 0;
+
+        .loginButtons {
+          @include customFlex();
+          margin: 2rem 0;
+        }
+        .message {
+          color: $secondary-color;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: $screen-md) {
+    img{
+      display: none;
+    }
+  }
+}

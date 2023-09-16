@@ -1,0 +1,38 @@
+@use "../../../scss" as *;
+
+.lecturedetail {
+  padding: 1rem;
+  margin: 1rem;
+
+  .navbar {
+    padding: 0.75rem;
+    ul {
+      list-style: none;
+
+      li {
+        display: inline-block;
+        padding: 0.5rem 0.75rem;
+        margin: 0 1px;
+        color: #0a033c;
+        background-color: #ffffff;
+        cursor: pointer;
+        transition: all 0.1s ease-in;
+
+        @media all and (max-width: $screen-md) {
+          padding: 0.5rem;
+        }
+      }
+      .active {
+        border-bottom: 0.25rem solid $primary-color;
+      }
+    }
+  }
+  .content {
+    padding: 0.25rem 2.5rem;
+    color: #000000;
+    display: none;
+  }
+  .content-active {
+    display: block;
+  }
+}

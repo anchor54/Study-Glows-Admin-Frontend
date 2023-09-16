@@ -1,0 +1,83 @@
+@use "../../scss" as *;
+
+.RequestcallHero {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 1rem;
+  align-items: center;
+  background: #e6f5fe;
+  padding: 1rem;
+  border-radius: 1rem;
+
+  p {
+    color: var(--p_clr_500);
+    padding: var(--p_padding);
+  }
+
+  h2 {
+    color: var(--h_clr_500);
+  }
+
+  @media all and (max-width: 600px) {
+    grid-template-columns: 1fr;
+    & > div:nth-child(2) {
+      display: none;
+    }
+  }
+}
+
+.dialog {
+  font-family: $font-family-1;
+  .title {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $primary-color;
+    color: $tertiary-color;
+    padding: 0.25rem 0.75rem;
+
+    p {
+      font-weight: $font-regular;
+      margin: 0;
+      padding: 0.25rem;
+      margin-bottom: 0;
+    }
+  }
+  .content {
+    padding: 0.25rem 0.75rem;
+
+    form {
+      display: flex;
+      flex-direction: column;
+      color: $p-color;
+      font-weight: $font-bold;
+
+      button {
+        margin: 1.5rem 0;
+        width: max-content;
+      }
+    }
+  }
+  .footer {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 1rem 0.75rem;
+  }
+  .phoneInput {
+    color: #3c4852;
+    width: 100%;
+    border: none;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.42);
+    border-radius: 0;
+    &:hover {
+      border-bottom: 2px solid black;
+    }
+    &:active,
+    &:focus {
+      box-shadow: none !important;
+      border-bottom: 2px solid blue;
+    }
+  }
+}

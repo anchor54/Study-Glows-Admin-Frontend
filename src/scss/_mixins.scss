@@ -1,0 +1,158 @@
+@mixin flexBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  @media all and (max-width: $screen-md) {
+    flex-direction: column;
+  }
+}
+
+@mixin customFlex($flex-direction: row, $justify-content: space-between, $align-items: center) {
+  display: flex;
+  flex-direction: $flex-direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin customGrid(
+  $grid-template-columns: 1fr 1fr,
+  $grid-gap: 1rem,
+  $align-items: center,
+  $justify-content: center
+) {
+  display: grid;
+  grid-template-columns: $grid-template-columns;
+  grid-gap: $grid-gap;
+  align-items: $align-items;
+  justify-content: $justify-content;
+}
+
+@mixin dashboardContent {
+  background-color: #e6f5fe;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 3px 3px 7px rgba(0, 0, 0, 0.15);
+}
+
+@mixin dashboardCard {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0.5rem 1rem;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  margin: 0 0.5rem;
+  margin-bottom: 0.5rem;
+  box-shadow: 4px 4px 12px rgba(1, 1, 1, 0.1);
+}
+
+@mixin dashboardSidebar {
+  background: #fcfcfc;
+  padding: 1rem;
+  border-radius: 1rem;
+  box-shadow: 4px 4px 12px rgba(1, 1, 1, 0.1);
+  height: max-content;
+}
+
+@mixin customH1 {
+  padding: 0;
+  margin: 0;
+  // font-weight: 600;
+  font-size: calc(5 * 0.25rem);
+}
+
+@mixin swiperSlider {
+  .swiper-wrapper {
+    padding: 0.5rem;
+    align-items: center;
+    max-width: 50vw;
+  }
+
+  // .swiper {
+  //   width: 100%;
+  //   height: 100%;
+  // }
+
+  // .swiper-slide {
+  // text-align: center;
+  // font-size: 1.25rem;
+
+  // /* Center slide text vertically */
+  // display: flex;
+  // justify-content: center;
+  // align-items: center;
+  // }
+
+  // .swiper-slide img {
+  //   display: block;
+  //   width: 100%;
+  //   height: 100%;
+  //   object-fit: cover;
+  // }
+
+  // .swiper-slide {
+  //   width: 100%;
+  // }
+
+  // .swiper-slide:nth-child(2n) {
+  //   width: 40%;
+  // }
+
+  // .swiper-slide:nth-child(3n) {
+  //   width: 20%;
+  // }
+
+  .swiper-button-prev {
+    display: none !important;
+  }
+
+  .swiper-button-next {
+    background-image: url(../../public/images/dashboard/next.svg);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: center;
+    background-color: #ffffff;
+    padding: 0 0.5rem;
+    border-radius: 50%;
+    box-shadow: 0px 16.0517px 32.1033px -7.7048px rgba(119, 119, 119, 0.3);
+  }
+
+  .swiper-button-next::after {
+    display: none;
+  }
+}
+
+@mixin resetDefaultCSS {
+  * {
+    all: revert;
+    // font-family: var(--font-family) !important;
+    line-height: 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@mixin customScrollbar {
+  &::-webkit-scrollbar {
+    width: 0.5rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px #0373ba;
+    border-radius: 0.75rem;
+    background-color: #0373ba;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #ffffff;
+    box-shadow: inset 0 0 5px #ffffff;
+    border-radius: 0.75rem;
+  }
+
+  &::-webkit-scrollbar-thumb:hover {
+    background: #fffffff3;
+  }
+}

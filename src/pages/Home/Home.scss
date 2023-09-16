@@ -1,0 +1,14 @@
+@use "../../scss" as *;
+
+.primary {
+  color: $primary-color !important;
+}
+.secondary {
+  color: $secondary-color !important;
+}
+.tertiary {
+  color: $fifth-color !important;
+}
+.warning {
+  color: $highlight-color !important;
+}

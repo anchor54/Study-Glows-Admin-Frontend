@@ -1,0 +1,17 @@
+@use "../../scss" as *;
+
+.learningContainer {
+  * {
+    padding: 0;
+    margin: 0;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    justify-items: stretch;
+
+    @media all and (max-width: $screen-md) {
+      grid-template-columns: 1fr;
+    }
+  }
+}

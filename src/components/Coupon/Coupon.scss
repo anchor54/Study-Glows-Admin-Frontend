@@ -1,0 +1,60 @@
+@use "../../scss" as *;
+
+@media all and (max-width: $screen-md) {
+  .divider {
+    display: none;
+  }
+}
+
+.coupon {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: 2.5rem min-content min-content;
+  grid-gap: 0;
+  justify-items: start;
+  align-items: center;
+  position: relative;
+  background: #ffffff;
+  padding: 1rem 0;
+  border-radius: 0.75rem;
+  box-shadow: 0px -8px 32px rgba(233, 238, 242, 0.4);
+
+  div:nth-child(2) {
+    input {
+      line-height: 1rem;
+      padding: 0.5rem;
+      color: #0a033c;
+      opacity: 0.5;
+      border-bottom-left-radius: 0.5rem;
+      border-top-left-radius: 0.5rem;
+      border: 1px solid #e9eef2;
+
+      &:hover,
+      &:focus {
+        border: 1px solid #e9eef2;
+        outline: none;
+      }
+      &:disabled {
+        background-color: #e8f1f7;
+        border: none;
+      }
+    }
+  }
+  div:nth-child(3) {
+    button {
+      border-bottom-left-radius: 0;
+      border-top-left-radius: 0;
+      line-height: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  .helpText {
+    position: absolute;
+    color: $primary-color;
+    left: 50%;
+    word-wrap: break-word;
+    transform: translateX(-50%);
+    bottom: -0.25rem;
+    white-space: nowrap;
+  }
+}

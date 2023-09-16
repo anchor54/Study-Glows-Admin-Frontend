@@ -1,0 +1,36 @@
+@use "../../../scss" as *;
+
+.blogSideCollections {
+  margin: var(--section_margin);
+
+  .card {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-gap: calc(var(--grid_gap)/2);
+    padding: 0.25rem 0;
+    margin: 0.25rem 0;
+
+    div:nth-child(1) {
+      width: 5rem;
+      margin: 0.25rem;
+
+      img {
+        border-radius: calc($rem-size + calc($rem-size/2));
+      }
+    }
+
+    div:nth-child(2) {
+      margin: 0.25rem;
+
+      h4,
+      p {
+        margin: 0;
+        padding: calc($rem-size/2);
+        color: #0e1133;
+      }
+      h4 {
+        color: #53545b;
+      }
+    }
+  }
+}

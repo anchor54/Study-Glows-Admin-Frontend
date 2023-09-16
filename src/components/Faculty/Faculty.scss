@@ -1,0 +1,49 @@
+@use "../../scss" as *;
+
+.facultyCollection {
+  display: grid;
+  grid-gap: var(--grid_gap);
+  grid-auto-flow: column;
+  overflow: auto;
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+  }
+
+  &::-webkit-scrollbar {
+    width: 0.001rem;
+  }
+}
+
+.facultyCard {
+  width: 30rem;
+  margin-right: 1rem;
+
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1rem;
+  align-items: center;
+  justify-items: start;
+  background: #ffffff;
+  box-shadow: 0px 29.0493px 58.0986px -13.9437px rgba(0, 0, 0, 0.07);
+  border-radius: 0.75rem;
+
+  .imageCard {
+    overflow: hidden;
+    border-radius: 50%;
+    background: #ffffff;
+    box-shadow: 3px 3px 13.9768px rgba(0, 0, 0, 0.15);
+
+    img {
+      border-radius: 50%;
+      aspect-ratio: 1/1;
+    }
+  }
+  .contentCard {
+    padding: 0.5rem 1rem;
+
+    p {
+      color: var(--p_clr_400);
+    }
+  }
+}

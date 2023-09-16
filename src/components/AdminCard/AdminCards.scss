@@ -1,0 +1,27 @@
+.cards{
+    font-family: 'Lato';
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 4px 4px 20px 8px rgba(0, 0, 0, 0.08);
+    margin: 5%;
+    margin-top:0;
+    padding: 5%;
+    // max-height: 20vw;
+}
+.card-heading{
+    padding: 2%;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+.card-number{
+    padding: 2%;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+.progress{
+    margin: 2%;
+}
+.card-content{
+    padding: 2%;
+    font-size: 0.7rem;
+}

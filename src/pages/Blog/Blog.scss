@@ -1,0 +1,122 @@
+@use "../../scss" as *;
+
+.editorialWrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 1rem;
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.vacanciesWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+
+  h2 {
+    margin-bottom: 0.5rem;
+    font-weight: $font-medium;
+  }
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.blogDetailWrapper {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  grid-gap: 1rem;
+
+  .blogDetail {
+    margin-top: 2rem;
+    padding: 1rem 0.5rem;
+
+    .blogHeader {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+
+      img{
+        cursor: pointer;
+      }
+
+      .profile {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: flex-start;
+
+        div:nth-child(2) {
+          margin-left: 1rem;
+          display: flex;
+          flex-direction: column;
+          align-items: flex-start;
+          justify-content: center;
+
+          div:nth-child(1) {
+            font-size: calc(5 * $rem-size);
+          }
+          div:nth-child(2) {
+            color: #8993a4;
+            font-size: calc(3.5 * $rem-size);
+          }
+        }
+        @media all and (max-width: $screen-md) {
+          & {
+            flex-direction: column;
+            width: 50%;
+            div:nth-child(2) {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+      .shareLinks {
+        ul {
+          list-style: none;
+
+          li {
+            display: inline-block;
+            padding: 0.25rem;
+
+            img {
+              width: 2.5rem;
+            }
+          }
+        }
+      }
+    }
+
+    .blogContent {
+      .thumnail {
+        max-width: 50%;
+        margin: 1rem auto;
+      }
+
+      .content {
+        max-width: 65vw;
+        width: 100%;
+        // height: auto;
+
+        img {
+          max-width: 100%;
+        }
+
+        font-family: inherit !important;
+        @include resetDefaultCSS();
+
+        @media all and (max-width: $screen-md) {
+          max-width: 100%;
+        }
+      }
+    }
+  }
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,0 +1,32 @@
+.admin-main{
+    // border: 2px solid;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 5%;
+}
+.label{
+    color: #666;
+    font-family: Lato;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    padding: 5%;
+}
+.stacking{
+    width: 300px;
+    max-width: 60vw;
+    // width: 60vw;
+}
+.login-footer{
+    padding-top: 5%;
+    color: #666;
+    font-family: Lato;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}

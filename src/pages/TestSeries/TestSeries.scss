@@ -1,0 +1,108 @@
+@use "../../scss" as *;
+
+.testseriesDetailWrapper {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-gap: 1rem;
+  justify-items: center;
+  padding: var(--section_padding);
+  margin: var(--section_margin);
+
+  @media all and (max-width: $screen-md) {
+    grid-template-columns: 1fr;
+  }
+
+  .priceTag {
+    @include customFlex($justify-content: center);
+    padding: 0.5rem 0;
+    margin: 0.5rem 0 0 0;
+
+    div:nth-child(1),
+    div:nth-child(2) {
+      padding: 0 0.5rem;
+    }
+
+    .price {
+      text-align: center;
+    }
+    .sellingPrice {
+      color: #0a033c;
+    }
+    .discount {
+      text-decoration: line-through;
+      color: $fifth-color;
+    }
+  }
+  .valid {
+    color: $fifth-color;
+    text-align: center;
+  }
+
+  .detail {
+    justify-self: end;
+    align-items: center;
+
+    h1 {
+      color: $fifth-color;
+    }
+    ul {
+      list-style-position: inside;
+
+      li {
+        padding: 0.25rem;
+        margin: 0.25rem;
+        color: #000000;
+        opacity: 0.7;
+
+        &::marker {
+          font-weight: $font-bold;
+          line-height: 100%;
+          font-size: calc(6 * $rem-size);
+          color: $fifth-color;
+          opacity: 1;
+        }
+      }
+    }
+
+    .enroll {
+      text-align: right;
+      button {
+        font-weight: $font-bold;
+        margin-left: 1rem;
+      }
+    }
+  }
+}
+
+.aboutTestSeries {
+  h2 {
+    margin: var(--section_margin);
+  }
+}
+
+.testSeriesFeature {
+  h2 {
+    margin: var(--section_margin);
+  }
+  .content {
+    ul {
+      width: 80vw;
+      list-style: none;
+      margin: 0 auto;
+      padding: 0;
+
+      li {
+        @include customFlex($justify-content: space-evenly);
+
+        h3 {
+          margin: var(--section_margin);
+          color: $fifth-color;
+        }
+        p {
+          color: #000000;
+          opacity: 0.7;
+        }
+      }
+    }
+  }
+}

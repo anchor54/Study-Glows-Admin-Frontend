@@ -1,0 +1,14 @@
+@use "../../scss" as *;
+
+.pageHero {
+  display: grid;
+  grid-template-columns: 12rem 3fr;
+  grid-gap: var(--grid_gap);
+  place-items: center;
+  margin: var(--section_margin);
+  padding: var(--section_padding);
+
+  @media all and (max-width: $screen-md) {
+    display: none;
+  }
+}

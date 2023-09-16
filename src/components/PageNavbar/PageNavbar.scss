@@ -1,0 +1,26 @@
+@use "../../scss" as *;
+
+.pageNavbar {
+  @include customFlex(row, flex-start);
+  background: #feeacd;
+  padding: 0.75rem;
+  clip-path: inset(0 -100vmax);
+  white-space: nowrap;
+  overflow-x: auto;
+  margin-top: -10px;
+  margin-bottom: 1rem;
+
+  &::-webkit-scrollbar {
+    width: 0;
+    height: 0;
+  }
+
+  & > div:nth-child(2) {
+    margin: 0 1.5rem;
+  }
+
+  .active {
+    border-bottom: 0.25rem solid $highlight-color;
+    padding: 0.5rem 0;
+  }
+}
