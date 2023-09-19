@@ -2,15 +2,21 @@ import React, { useEffect, useState } from 'react';
 import './Admin.scss';
 import { Box, Button, Checkbox, Container, FormControlLabel, Stack, TextField } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
+import axios from '../../axios/privateAxios'
+import { useCookies } from 'react-cookie';
+import { setAuthTokens } from '../../axios/tokens';
 // import Visibility from '@mui/icons-material/Visibility';
 // import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 export const AdminPanel = () => {
+  console.log(process.env)
 
   const navigate = useNavigate();
 
-  const [username, setUsername] = useState();
-  const [password, setPassword] = useState();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+  const [remember, setRemember] = useState(false);
+  const [cookie, setCookie] = useCookies(['user'])
 
   const handleChange = (event) => {
     setUsername(event.target.value);
@@ -19,11 +25,27 @@ export const AdminPanel = () => {
     setPassword(event.target.value);
   }
   
-  const handleSubmit = () => {
-    if(username === 'admin@gmail.com' && password === 'Pass@123'){
-      navigate('/admin/dashboard');
+  const handleSubmit = async () => {
+    if(username !== '' && password !== '') {
+      const response = await axios.post('/account/admin/login', { username, password })
+      if (response.status === 200) {
+        const { token, refresh } = response.data
+        if (remember) {
+          setCookie('token', token)
+          setCookie('refresh-token', refresh)
+        }
+        setAuthTokens(token, refresh)
+        navigate('/admin/dashboard');
+      }
     }
   }
+
+  useEffect(() => {
+    if (cookie.token) {
+      setAuthTokens(cookie.token, cookie.refresh)
+      navigate('/admin/dashboard');
+    }
+  }, [])
 
   // const [showPassword, setShowPassword] = React.useState(false);
 
@@ -89,7 +111,7 @@ export const AdminPanel = () => {
                 spacing={{ xs: 1, sm: 2, md: 4 }}
               >
                 <div style={{margin:"auto",padding: "2%", paddingTop: "0%"}}>
-                <FormControlLabel control={<Checkbox />} label="Remember Me" style={{ color: "#666", fontFamily: "Lato", fontWeight: "400" }}/>
+                <FormControlLabel control={<Checkbox onClick={(event) => setRemember(event.target.value)} />} label="Remember Me" style={{ color: "#666", fontFamily: "Lato", fontWeight: "400" }}/>
                 </div>
                 <div style={{margin:"auto",padding: "2%", paddingTop: "0%"}}>
                 <Button variant="contained" onClick={handleSubmit}>Log In</Button>
