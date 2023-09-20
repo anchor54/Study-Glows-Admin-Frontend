@@ -102,9 +102,6 @@ export const AdminPanel = () => {
             <div className="login-footer" style={{ paddingLeft: "2%" }}>
               Register
             </div>
-            <div className="login-footer">
-              Forgot your password
-            </div>
           </Stack>
         </Box>
     </Container>
