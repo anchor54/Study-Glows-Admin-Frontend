@@ -5,12 +5,13 @@ import { useNavigate } from 'react-router-dom';
 import axios from '../../axios/privateAxios'
 import { useCookies } from 'react-cookie';
 import { setAuthTokens } from '../../axios/tokens';
+import { userAtom } from '../../state/atoms/userAtom';
+import { useRecoilState } from 'recoil';
 // import Visibility from '@mui/icons-material/Visibility';
 // import VisibilityOff from '@mui/icons-material/VisibilityOff';
 
 export const AdminPanel = () => {
-  console.log(process.env)
-
+  const [_, setAdmin] = useRecoilState(userAtom)
   const navigate = useNavigate();
 
   const [username, setUsername] = useState('');
@@ -29,12 +30,15 @@ export const AdminPanel = () => {
     if(username !== '' && password !== '') {
       const response = await axios.post('/account/admin/login', { username, password })
       if (response.status === 200) {
-        const { token, refresh } = response.data
+        const { token, refresh, user } = response.data
+        console.log(user)
         if (remember) {
           setCookie('token', token)
           setCookie('refresh-token', refresh)
+          setCookie('user', user)
         }
         setAuthTokens(token, refresh)
+        setAdmin(user)
         navigate('/admin/dashboard');
       }
     }
@@ -43,6 +47,7 @@ export const AdminPanel = () => {
   useEffect(() => {
     if (cookie.token) {
       setAuthTokens(cookie.token, cookie.refresh)
+      setAdmin(cookie.user)
       navigate('/admin/dashboard');
     }
   }, [])
