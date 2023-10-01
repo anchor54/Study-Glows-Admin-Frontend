@@ -52,6 +52,8 @@ import { UserProfile } from "./pages/Admin/User/UserProfile";
 import { OrderDetails } from "./pages/Admin/Payment/OrderDetails";
 import { CalendarPage } from "./pages/Admin/Calendar/CalendarPage";
 
+import AdminLayout from "./pages/Admin/AdminLayout"
+
 function App() {
   const auth = useRecoilValue(authAtom);
 
@@ -133,35 +135,37 @@ function App() {
       </Route>
 
       <Route path="admin" >
-        <Route index element={<AdminPanel />} />
-        <Route path="dashboard" element={<Dashboard />} />
-        <Route path="payment">
-          <Route index element={<PaymentMgmt />} />
-          <Route path="details" element={<OrderDetails />} />
-        </Route>
-        <Route path="user">
-          <Route index element={<UserMgmt />} />
-          <Route path="editUser" element={<EditUser />} />
-          <Route path="addUser" element={<AddUser />} />
-          <Route path="profile" element={<UserProfile />} />
-        </Route>
-        <Route path="course">
-          <Route index element={<CourseMgmt />}/>
-          <Route path="addCourse" element={<AddCourse />}/>
-        </Route>
+        <Route index path="login" element={<AdminPanel />} />
+        <Route element={<AdminLayout />}>
+          <Route path="dashboard" element={<Dashboard />} />
+            <Route path="payment">
+              <Route index element={<PaymentMgmt />} />
+              <Route path="details" element={<OrderDetails />} />
+            </Route>
+            <Route path="user">
+              <Route index element={<UserMgmt />} />
+              <Route path="editUser" element={<EditUser />} />
+              <Route path="addUser" element={<AddUser />} />
+              <Route path="profile" element={<UserProfile />} />
+            </Route>
+            <Route path="course">
+              <Route index element={<CourseMgmt />} />
+              <Route path="addCourse" element={<AddCourse />} />
+            </Route>
 
-        <Route path="product" element={<ProductMgmt />} />
-        <Route path="test">
-          <Route index element={<TestMgmt />} />
-          <Route path="addTest" element={<AddTest />} />
-        </Route>
-        <Route path="student" element={<StudentMgmt />} />
-        <Route path="faculty">
-          <Route index element={<FacMgmt />} />
-          <Route path="addfaculty" element={<AddFac />} />
-        </Route>
-        <Route path="editfaculty" element={<EditFac />} />
-        <Route path="calendar" element={<CalendarPage />} />
+            <Route path="product" element={<ProductMgmt />} />
+            <Route path="test">
+              <Route index element={<TestMgmt />} />
+              <Route path="addTest" element={<AddTest />} />
+            </Route>
+            <Route path="student" element={<StudentMgmt />} />
+            <Route path="faculty">
+              <Route index element={<FacMgmt />} />
+              <Route path="addfaculty" element={<AddFac />} />
+            </Route>
+            <Route path="editfaculty" element={<EditFac />} />
+            <Route path="calendar" element={<CalendarPage />} />
+          </Route>
       </Route>
       
       {/* online test */}

@@ -9,22 +9,22 @@ import { useEffect } from "react";
 export const CourseGridView = () => {
 
   const [loading, setLoading] = useState(false);
-  const [data, setData] = useState();
+  const [courses, setCourses] = useState();
   const [ins, setIns] = useState();
 
   const fetchCourseInfo = async () => {
      await publicAxios
-          .get('http://65.0.164.61/allcourse')
+          .get('/courses')
           .then((res) => {
             console.log(res.data);
             if (res.status === 200) {
-              setData(res.data);
+              setCourses(res.data?.data);
               setLoading(false);
             }
           })
           .catch((e) => {
             if (e.response && e.response.status === 404) {
-              setData(true);
+              setCourses(null);
               setLoading(false);
             }
             console.info("error", e);
@@ -32,7 +32,7 @@ export const CourseGridView = () => {
   }
   const fetchInstructorInfo = async () => {
      await publicAxios
-          .get('http://65.0.164.61/instructors')
+          .get('/instructors')
           .then((instr) => {
             console.log(instr.data);
             if (instr.status === 200) {
@@ -61,9 +61,9 @@ export const CourseGridView = () => {
   return (
     <Box sx={{ height: "100%", width: "100%", overflowY: 'scroll', fontFamily: 'Lato' }}>
       {loading ? (<>Loading</>):(
-        <>{data?(
+        <>{courses?(
       <Grid container spacing={{ xs: 2, md: 3 }} columns={{ xs: 4, sm: 8, md: 12 }}>
-      {data.map((course, index) => (
+      {courses.map((course, index) => (
     <Grid item xs={12} sm={4} md={4} key={course.id}>
       {ins?(
       <div style={{ background: 'white', boxShadow:'4px 4px 20px 8px rgba(0, 0, 0, 0.08)', borderRadius: "5px"}}>

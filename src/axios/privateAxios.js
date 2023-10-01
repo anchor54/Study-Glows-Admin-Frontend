@@ -8,7 +8,7 @@ import {
   removeAuthTokens,
 } from "./tokens";
 
-const baseURL = process.env.REACT_APP_BACKEND_APP_BASE_URL;
+const baseURL = process.env.REACT_APP_BACKEND_URL;
 
 const privateAxios = axios.create({
   baseURL: baseURL,
